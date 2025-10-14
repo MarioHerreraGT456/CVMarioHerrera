@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="icon" type="image/png" href="images/fenixlogodark-Photoroom.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-light.css">
+    <link rel="stylesheet" href="css/toggle-button.css"> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+    <title>Mario Herrera</title>
+    <style>
+        /* Define the zoom out animation */
+        @keyframes zoomOut {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(3); /* Zoom out effect */
+            }
+        }
+        /* Style for when the animation is active */
+        .zoom-out {
+            animation: zoomOut 0.8s ease-in-out forwards; /* Apply the animation for 0.8s */
+        }
+        /* Ensures the background image for the final hover state is ready */
+        .intro {
+            background-color: #F47A00;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            color: white;
+            position: relative;
+            cursor: pointer; /* New: Indicates the div is clickable */
+        }
+        #img-background {
+            z-index: 1000;
+            position: fixed; /* Changed from absolute to fixed to cover the whole viewport reliably */
+            top: 0; /* New: Fixes the position */
+            left: 0; /* New: Fixes the position */
+        }
+        .intro img {
+            width: 1100px;
+            height: auto;
+            /* The image mask-image will be the key for the silhouette effect */
+            -webkit-mask-image: url("images/imagen1oscuro.png"); /* Webkit mask for silhouette */
+            mask-image: url("images/imagen1oscuro.png"); /* Standard mask for silhouette */
+            mask-size: cover; /* Ensures the mask covers the image */
+            -webkit-mask-size: cover;
+            background: url("images/imagen1.png"); /* Initial image background */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            transition: background 0.5s ease-in-out; /* New: Smooth transition for background image change */
+        }
+        .intro img:hover {
+            /* Transition 1: Original image (imagen1.png) to Silhouette (fondo1oscuro.png) 
+               The 'fondo1oscuro.png' image is assumed to be a placeholder for the initial silhouette color/mask.
+               This step achieves the effect of the silhouette appearing.
+            */
+            background: url("images/fondo1oscuro.png"); /* Second step: show the dark silhouette color/placeholder */
+            background-size: cover;
+            background-position: center;
+            /* Transition 2: Inside the silhouette, show the background 'fondo1.jpg' 
+               We will use an inner element or pseudo-element for the final background to show inside the mask.
+               However, to stick to a single image tag as requested, we modify the existing hover to show 
+               the *final* background (`fondo1.jpg`) masked by the silhouette.
+            */
+        }
+
+        /* To correctly show the background inside the silhouette on hover:
+           1. Use the main image as a mask (already set up, assuming imagen1oscuro.png is the mask).
+           2. Change the *background* of the img tag on hover to the final image (`fondo1.jpg` which I'll rename as `fondo1.png` for the code to work).
+        */
+        .intro img:hover {
+            background: url("images/fondo1.jpg"); /* Final background inside the silhouette */
+            background-size: cover;
+            background-position: center;
+            mix-blend-mode: normal; /* Normal blend mode for clear background replacement */
+            /* The mask-image property set above ensures only the silhouette area is visible */
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id="img-background" class=" koulen-regular intro" onclick="exitIntroAnimation()">
+        <img src="/images/imagen1.png" alt="">
+        <h1 class="koulen-regular">
+           MARIO HERRERA
+        </h1>
+    </div> -->
+
+
+    <div id="video-background">
+        <video width="" height="" autoplay muted loop playsinline>
+             <source src="/images/fondoOscuro.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div id="video-background-light" class="hidden">
+        <video width="" height="" autoplay muted loop playsinline>
+             <source src="/images/fondoCLaro.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <button id="socket" class="toggle-button-dark" onclick="toggleDarkMode()">
+        
+        <svg id="socket-icon" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none">
+    <rect width="24" height="24" />
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.23129 2.24048C9.24338 1.78695 10.1202 2.81145 9.80357 3.70098C8.72924 6.71928 9.38932 10.1474 11.6193 12.3765C13.8606 14.617 17.3114 15.2755 20.3395 14.1819C21.2206 13.8637 22.2173 14.7319 21.7817 15.7199C21.7688 15.7491 21.7558 15.7782 21.7427 15.8074C20.9674 17.5266 19.7272 19.1434 18.1227 20.2274C16.4125 21.3828 14.3957 22.0001 12.3316 22.0001H12.3306C9.93035 21.9975 7.6057 21.1603 5.75517 19.6321C3.90463 18.1039 2.64345 15.9797 2.18793 13.6237C1.73241 11.2677 2.11094 8.82672 3.2586 6.71917C4.34658 4.72121 6.17608 3.16858 8.20153 2.25386L8.23129 2.24048Z" fill="#323232"/>
+    </svg>
+    </button>
+    
+
+<div id="main-content" class="">
+        <section class="page">
+            <aside class="sidebar">
+                <nav class="menu koulen-regular ">
+                <button class="" type="button">
+                    <img src="/images/folder_code.png" alt=""><a href="/experiencia.php">EXPERIENCIA</a></button>
+                    <button class="" type="button">
+                    <img src="/images/article.png" alt=""><a href="/conocimiento.php">CONOCIMIENTOS</a></button>
+                <button class="">
+                    <img src="/images/newsstand.png" alt=""><a href="/educacion.php">EDUCACIÓN</a></button>
+                <button class="">
+                    <img src="/images/person_raised_hand.png" alt=""><a href="/habilidades.php">HAB. BLANDAS</a></button>
+                <button class="">
+                    <img src="/images/mail.png" alt=""><a href="/contacto.php">CONTACTO</a></button>
+                </nav>
+            </aside>
+        </section>
+
+        <div>
+            <img class="portada" src="images/image2.png" alt="Mario Herrera">
+            <h2 class="koulen-regular orange">DESARROLLADOR FULL STACK</h2>
+            <button id="btnpro" class="koulen-regular ">
+                <a href="/conocimiento.php">VER MIS HABLIDADES</a>
+            </button>
+        </div>
+
+        <section class="page2">
+            <aside class="sidebar2 curriculum-descarga">
+                <div class="descarga-contenido">
+                    <a href="/images/CVMarioHerrera.pdf" download="Full Stack Dev Mario Herrera">
+                        <img src="/images/article_person.png" alt="">
+                    </a>
+                    <h3 class="koulen-regular">
+                        DESCARGAR CURRICULUM
+                    </h3>
+                </div>
+            </aside>
+        </section>
+        
+    </div>
+
+<div id="main-content-light" class="hidden">
+        <section class="page-light">
+            <aside class="sidebar-light">
+                <nav class="menu-light koulen-regular ">
+                <button class="" type="button">
+                    <img src="/images/folder_codelight.png" alt=""><a href="/experiencia.php" class="blue">EXPERIENCIA</a></button>
+                    <button class="" type="button">
+                    <img src="/images/articlelight.png" alt=""><a href="/conocimiento.php">CONOCIMIENTOS</a></button>
+                <button class="">
+                    <img src="/images/newsstandlight.png" alt=""><a href="/educacion.php">EDUCACIÓN</a></button>
+                <button class="">
+                    <img src="/images/person_raised_handlight.png" alt=""><a href="/habilidades.php">HAB. BLANDAS</a></button>
+                <button class="">
+                    <img src="/images/maillight.png" alt=""><a href="/contacto.php">CONTACTO</a></button>
+                </nav>
+            </aside>
+        </section>
+
+        <div>
+            <img class="portada" src="images/image2.png" alt="Mario Herrera">
+            <h2 class="koulen-regular blue">DESARROLLADOR FULL STACK</h2>
+            <button id="btnpro-light" class="koulen-regular ">
+                <a href="/conocimiento.php">VER MIS HABLIDADES</a>
+            </button>
+        </div>
+
+        <section class="page2-light">
+            <aside class="sidebar2-light curriculum-descarga">
+                 <div class="descarga-contenido">
+                    <a href="/images/CVMarioHerrera.pdf" download="Full Stack Dev Mario Herrera">
+                        <img src="/images/article_personlight.png" alt="">
+                    </a>
+                    <h3 class="koulen-regular ">
+                        DESCARGAR CURRICULUM
+                    </h3>
+                </div>
+            </aside>
+        </section>
+    </div>
+    <script>
+        function exitIntroAnimation() {
+            const introDiv = document.getElementById('img-background');
+            const imgElement = introDiv.querySelector('img');
+
+            // Step 1: Apply the zoom-out animation class
+            imgElement.classList.add('zoom-out');
+
+            // Step 2: Set a timeout to wait for the animation to finish
+            const animationDuration = 800; // Must match the CSS animation duration (0.8s = 800ms)
+
+            setTimeout(() => {
+                // Step 3: Hide the intro screen
+                introDiv.style.display = 'none';
+            }, animationDuration);
+        }
+    </script>
+    <script src="js/toggle.js"></script>
+</body>
+</html>

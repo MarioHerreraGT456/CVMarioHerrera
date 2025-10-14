@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/fenixlogodark-Photoroom.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-light.css">
+    <link rel="stylesheet" href="css/exp.css">
+    <link rel="stylesheet" href="css/toggle-button.css"> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+    <title>Mario Herrera</title>
+    
+</head>
+<body>
+  
+    <div id="video-background">
+        <video width="" height="" autoplay muted loop playsinline>
+             <source src="/images/fondoOscuro.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div id="video-background-light" class="hidden">
+        <video width="" height="" autoplay muted loop playsinline>
+             <source src="/images/fondoCLaro.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <button id="socket" class="toggle-button-dark" onclick="toggleDarkMode()">
+        
+        <svg id="socket-icon" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none">
+    <rect width="24" height="24" />
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.23129 2.24048C9.24338 1.78695 10.1202 2.81145 9.80357 3.70098C8.72924 6.71928 9.38932 10.1474 11.6193 12.3765C13.8606 14.617 17.3114 15.2755 20.3395 14.1819C21.2206 13.8637 22.2173 14.7319 21.7817 15.7199C21.7688 15.7491 21.7558 15.7782 21.7427 15.8074C20.9674 17.5266 19.7272 19.1434 18.1227 20.2274C16.4125 21.3828 14.3957 22.0001 12.3316 22.0001H12.3306C9.93035 21.9975 7.6057 21.1603 5.75517 19.6321C3.90463 18.1039 2.64345 15.9797 2.18793 13.6237C1.73241 11.2677 2.11094 8.82672 3.2586 6.71917C4.34658 4.72121 6.17608 3.16858 8.20153 2.25386L8.23129 2.24048Z" fill="#323232"/>
+    </svg>
+    </button>
+    
+
+<div id="main-content" class="">
+        <section class="page">
+            <aside class="sidebar">
+                <nav class="menu koulen-regular ">
+                <button class="" type="button">
+                    <img src="/images/folder_code.png" alt=""><a href="/experiencia.php">EXPERIENCIA</a></button>
+                    <button class="" type="button">
+                    <img src="/images/article.png" alt=""><a href="/conocimiento.php">CONOCIMIENTOS</a></button>
+                <button class="">
+                    <img src="/images/newsstand.png" alt=""><a href="/educacion.php">EDUCACIÓN</a></button>
+                <button class="">
+                    <img src="/images/person_raised_hand.png" alt=""><a href="/habilidades.php">HAB. BLANDAS</a></button>
+                <button class="">
+                    <img src="/images/mail.png" alt=""><a href="/contacto.php">CONTACTO</a></button>
+                </nav>
+            </aside>
+        </section>
+
+        <div class="exp-container">
+            <img id="exp" src="images/image4.png" alt="Mario Herrera">
+            <div class="exp-info-container koulen-regular">
+                <div class="exp-info-item">
+                    <div class="exp-info-img1"></div>
+                    <div class="exp-info">
+                        <h3 class="">
+                             Colegio de Contadores Públicos del Estado Miranda (Mi Boutique)
+                        </h3>
+                        <p>
+                            - Diseño y Desarrollo del e-commerce del Colegio de Contadores. <br>
+- Optimización del rendimiento y aplicación de técnicas de SEO. <br>
+- Diseño de interfaces responsivas. <br>
+- Tecnologías: WordPress, Elementor, WooCommerce, Canva<br>
+                        </p>
+                    </div>
+                </div>
+                <div class="exp-info-item">
+                    <div class="exp-info-img2"></div>
+                    <div class="exp-info">
+                        <h3 class="">
+                             Clinmedia Agencia de Marketing 
+                        </h3>
+                        <p>
+                            Desarrollo y gestión de páginas web y tiendas virtuales en WordPress con Elementor y WooCommerce. <br>- Desarrollo y gestión de páginas web y tiendas virtuales en WordPress con Elementor y WooCommerce. <br>
+- Optimización del rendimiento y aplicación de técnicas de SEO. <br>
+- Diseño de interfaces responsivas para móviles, tablets y PCs. <br>
+- Tecnologías: WordPress, Elementor, WooCommerce, JavaScript, Figma, Canva
+                        </p>
+                    </div>
+                </div>
+                <div class="exp-info-item">
+                    <div class="exp-info-img3"></div>
+                    <div class="exp-info">
+                        <h3 class="">
+                             Tnvio
+                        </h3>
+                        <p>
+                            https://tnvio.com 
+Plataforma para enviar dinero de México a Venezuela con protocolos transparentes y confiables, construcción de la base de datos para el buen manejo de la información de los usuarios para la conversión del peso mexicano a bolívares de la manera mas rápida y eficiente.<br> 
+- Tecnologías: Laravel, PostgreSQL, Alpine.js, Tailwind CSS, Figma y Git.<br> 
+- Diseño de interfaces responsivas para móviles, tablets y PCs<br> 
+                        </p>
+                    </div>
+                </div>
+                <div class="exp-info-item">
+                    <div class="exp-info-img4"></div>
+                    <div class="exp-info">
+                        <h3 class="">
+                             Universidad Bicentenarita de Aragua (CAP)
+                        </h3>
+                        <p>
+                           Optimización y actualización de la pagina web del Centro de Atención Psicológica de la Universidad Bicentenaria de Aragua. Desarrollado con WordPress.<br> 
+                        </p>
+                    </div>
+                </div>
+            </div>
+         
+        </div>
+
+        
+    </div>
+
+<div id="main-content-light" class="hidden">
+        <section class="page-light">
+            <aside class="sidebar-light">
+                <nav class="menu-light koulen-regular ">
+                <button class="" type="button">
+                    <img src="/images/folder_codelight.png" alt=""><a href="/experiencia.php" class="blue">EXPERIENCIA</a></button>
+                    <button class="" type="button">
+                    <img src="/images/articlelight.png" alt=""><a href="/conocimiento.php">CONOCIMIENTOS</a></button>
+                <button class="">
+                    <img src="/images/newsstandlight.png" alt=""><a href="/educacion.php">EDUCACIÓN</a></button>
+                <button class="">
+                    <img src="/images/person_raised_handlight.png" alt=""><a href="/habilidades.php">HAB. BLANDAS</a></button>
+                <button class="">
+                    <img src="/images/maillight.png" alt=""><a href="/contacto.php">CONTACTO</a></button>
+                </nav>
+            </aside>
+        </section>
+
+          <div class="exp-container">
+            <img id="exp" src="images/image4.png" alt="Mario Herrera">
+            <div class="exp-info-container koulen-regular">
+                <div class="exp-info-item">
+                    <div class="exp-info-img1"></div>
+                    <div class="exp-info">
+                        <h3 class="">
+                             Colegio de Contadores Públicos del Estado Miranda (Mi Boutique)
+                        </h3>
+                        <p>
+                            - Diseño y Desarrollo del e-commerce del Colegio de Contadores. <br>
+- Optimización del rendimiento y aplicación de técnicas de SEO. <br>
+- Diseño de interfaces responsivas. <br>
+- Tecnologías: WordPress, Elementor, WooCommerce, Canva<br>
+                        </p>
+                    </div>
+                </div>
+                <div class="exp-info-item">
+                    <div class="exp-info-img2"></div>
+                    <div class="exp-info">
+                        <h3 class="">
+                             Clinmedia Agencia de Marketing 
+                        </h3>
+                        <p>
+                            Desarrollo y gestión de páginas web y tiendas virtuales en WordPress con Elementor y WooCommerce. <br>- Desarrollo y gestión de páginas web y tiendas virtuales en WordPress con Elementor y WooCommerce. <br>
+- Optimización del rendimiento y aplicación de técnicas de SEO. <br>
+- Diseño de interfaces responsivas para móviles, tablets y PCs. <br>
+- Tecnologías: WordPress, Elementor, WooCommerce, JavaScript, Figma, Canva
+                        </p>
+                    </div>
+                </div>
+                <div class="exp-info-item">
+                    <div class="exp-info-img3"></div>
+                    <div class="exp-info">
+                        <h3 class="">
+                             Tnvio
+                        </h3>
+                        <p>
+                            https://tnvio.com 
+Plataforma para enviar dinero de México a Venezuela con protocolos transparentes y confiables, construcción de la base de datos para el buen manejo de la información de los usuarios para la conversión del peso mexicano a bolívares de la manera mas rápida y eficiente.<br> 
+- Tecnologías: Laravel, PostgreSQL, Alpine.js, Tailwind CSS, Figma y Git.<br> 
+- Diseño de interfaces responsivas para móviles, tablets y PCs<br> 
+                        </p>
+                    </div>
+                </div>
+                <div class="exp-info-item">
+                    <div class="exp-info-img4"></div>
+                    <div class="exp-info">
+                        <h3 class="">
+                             Universidad Bicentenarita de Aragua (CAP)
+                        </h3>
+                        <p>
+                           Optimización y actualización de la pagina web del Centro de Atención Psicológica de la Universidad Bicentenaria de Aragua. Desarrollado con WordPress.<br> 
+                        </p>
+                    </div>
+                </div>
+            </div>
+         
+        </div>
+
+          
+        </div>
+    <script>
+        function exitIntroAnimation() {
+            const introDiv = document.getElementById('img-background');
+            const imgElement = introDiv.querySelector('img');
+
+            // Step 1: Apply the zoom-out animation class
+            imgElement.classList.add('zoom-out');
+
+            // Step 2: Set a timeout to wait for the animation to finish
+            const animationDuration = 800; // Must match the CSS animation duration (0.8s = 800ms)
+
+            setTimeout(() => {
+                // Step 3: Hide the intro screen
+                introDiv.style.display = 'none';
+            }, animationDuration);
+        }
+    </script>
+    <script>
+        // Lógica JavaScript para manejar el hover, opacidad de hermanos y desplazamiento de layout
+        
+        // Función principal para configurar los eventos de hover
+        function setupSkillHovers(containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return; // Salir si el contenedor no existe
+            
+            const skillItems = container.querySelectorAll('.skil-item');
+
+            // Itera sobre todos los ítems de habilidad
+            skillItems.forEach(item => {
+                
+                // Función que se ejecuta al entrar el cursor
+                item.addEventListener('mouseenter', () => {
+                    // 1. Activa el estado 'active' en el ítem actual (para elevación y mostrar tooltip)
+                    item.classList.add('active');
+                    
+                    // 2. Reduce la opacidad de todos los ítems hermanos (los que no son el activo)
+                    skillItems.forEach(sibling => {
+                        if (sibling !== item) {
+                            sibling.style.opacity = '0.5';
+                        }
+                    });
+                });
+
+                // Función que se ejecuta al salir el cursor
+                item.addEventListener('mouseleave', () => {
+                    // 1. Desactiva el estado 'active'
+                    item.classList.remove('active');
+                    
+                    // 2. Restaura la opacidad de todos los ítems
+                    skillItems.forEach(sibling => {
+                        sibling.style.opacity = '1';
+                    });
+                });
+            });
+        }
+
+        // Ejecuta la configuración para ambos modos (oscuro y claro)
+        setupSkillHovers('skils-container');
+        setupSkillHovers('skils-container-light');
+    </script>
+    <script src="js/toggle.js"></script>
+</body>
+</html>
