@@ -60,36 +60,36 @@
             
             <div class="hab-item">
                 <img src="/images/voice.png" alt="UBA">
-                <h3>
+               <h3 class="koulen-regular">
                    comunicación efectiva
                 </h3>
             </div>
             <div class="hab-item">
-                <h3>
+              <h3 class="koulen-regular">
      trabajo en equipo
                 </h3>
                  <img src="/images/diversity_3.png" alt="Lourtec">
             </div>
             <div class="hab-item">
             <img src="/images/network_intelligence.png" alt="Platzi">
-                <h3>
+             <h3 class="koulen-regular">
                  pensamiento analítico
                 </h3>
             </div>
             <div class="hab-item">
-                <h3>
+               <h3 class="koulen-regular">
                    gestión del tiempo
                 </h3>
             <img src="/images/chronic.png" alt="Platzi">
             </div>
             <div class="hab-item">
             <img src="/images/computer_cancel.png" alt="Platzi">
-                <h3>
+                <h3 class="koulen-regular">
              resolución de problemas
                 </h3>
             </div>
             <div class="hab-item">
-                <h3>
+             <h3 class="koulen-regular">
                 creatividad
                 </h3>
             <img src="/images/cognition.png" alt="Platzi">
@@ -119,38 +119,38 @@
         </section>
         <img id="hab" src="images/image3.png" alt="Mario Herrera">
   <div class="hab-container">
-            <div class="hab-item-light">
+            <div class="hab-item-light koulen-regular">
                 <img src="/images/voicelight.png" alt="UBA">
-                <h3>
+                <h3 class="koulen-regular">
                    comunicación efectiva
                 </h3>
             </div>
             <div class="hab-item-light">
-                <h3>
+                <h3 class="koulen-regular">
      trabajo en equipo
                 </h3>
                  <img src="/images/diversity_3light.png" alt="Lourtec">
             </div>
             <div class="hab-item-light">
             <img src="/images/network_intelligencelight.png" alt="Platzi">
-                <h3>
+                <h3 class="koulen-regular">
                  pensamiento analítico
                 </h3>
             </div>
             <div class="hab-item-light">
-                <h3>
+                <h3 class="koulen-regular">
                    gestión del tiempo
                 </h3>
             <img src="/images/chroniclight.png" alt="Platzi">
             </div>
             <div class="hab-item-light">
             <img src="/images/computer_cancellight.png" alt="Platzi">
-                <h3>
+               <h3 class="koulen-regular">
              resolución de problemas
                 </h3>
             </div>
             <div class="hab-item-light">
-                <h3>
+                <h3 class="koulen-regular">
                 creatividad
                 </h3>
             <img src="/images/cognitionlight.png" alt="Platzi">
