@@ -1,0 +1,211 @@
+#exp {
+  mask-image: linear-gradient(black 80%, transparent);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  max-width: 100%;
+  height: 750px;
+  margin-top: 550px;
+  margin-left: 0;
+  margin-right: 50px;
+  padding-right: 0;
+  padding-left: 0;
+  border: none; /* MODIFICADO: Eliminado el borde */
+  left: 50px;
+  right: 0;
+  position: absolute;
+}
+
+.exp-container {
+    /* Contenedor principal que reserva espacio para la imagen #exp */
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 250px;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    /* Reserva un espacio a la izquierda (450px) para la imagen #exp */
+
+}
+
+.exp-info-container {
+    overflow-y: scroll; /* REQUERIDO: Asegura scroll vertical SOLO en este contenedor */
+    overflow-x: hidden; /* NUEVO: Asegura que NO haya scroll horizontal */
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 30px; 
+    position: absolute;
+    
+    /* MODIFICACIONES CRÍTICAS DE TAMAÑO */
+    width: 1000px; /* Aumento de ancho */
+    height: 500px; /* MODIFICADO: Altura reducida (de 650px a 500px) para forzar el scroll interno */
+    
+    /* MODIFICACIONES CRÍTICAS DE VISIBILIDAD DE LA PRIMERA IMAGEN */
+    padding-top: 20px; /* NUEVO: Padding superior mínimo para que el contenido comience visible */
+    padding-bottom: 20px; /* NUEVO: Padding inferior para que el último contenido no quede pegado al borde */
+    padding-left: 20px; /* Relleno a la izquierda */
+    padding-right: 20px; /* Relleno a la derecha (importante por el scrollbar) */
+    
+    /* POSICIONAMIENTO */
+    margin: 600px auto 0 35px; 
+    
+    /* Ajuste para que el contenido empiece visible */
+    min-height: 0; 
+}
+
+.exp-info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: flex-start;
+    width: 100%; 
+}
+
+.exp-info h3 {
+    margin-top: 15px;
+}
+
+.exp-info p {
+    text-align: justify; /* REQUERIDO: Justifica el texto del párrafo */
+    margin-top: 10px;
+}
+
+.exp-info-img1 {
+    width: 450px;
+    height: 250px;
+    background-size: 100% 100%;
+    box-shadow: 0 20px 20px 10px rgba(0, 0, 0, 0.2);
+    animation: animate1 15s linear infinite; /* MODIFICADO: Cambiado a animate1 para especificidad */
+    border-radius: 20px;
+    margin-bottom: 10px; 
+    transition: background-image 1s ease-in-out; /* NUEVO: Transición suave entre imágenes */
+}  
+
+@keyframes animate1 { /* MODIFICADO: Cambiado a animate1 */
+    0% {
+        background-image: url(/images/ccp1.png);
+    }
+    33% { /* Ajustado para 3 imágenes */
+        background-image: url(/images/ccp1.png);
+    }
+    34% {
+        background-image: url(/images/ccp2.png);
+    }
+    66% { /* Ajustado para 3 imágenes */
+        background-image: url(/images/ccp2.png);
+    }
+    67% {
+        background-image: url(/images/ccp3.png);
+    }
+    100% {
+        background-image: url(/images/ccp3.png);
+    }
+}
+
+.exp-info-img2 {
+    width: 450px;
+    height: 250px;
+    background-size: 100% 100%;
+    box-shadow: 0 20px 20px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    background-image: url(/images/clinmedia.png);
+    margin-bottom: 10px;
+}
+
+/* NUEVAS CLASES PARA LAS IMÁGENES 3 Y 4 */
+.exp-info-img3 {
+    width: 450px;
+    height: 250px;
+    background-size: 100% 100%;
+    box-shadow: 0 20px 20px 10px rgba(0, 0, 0, 0.2);
+    animation: animate3 15s linear infinite; /* Animación específica para la imagen 3 */
+    border-radius: 20px;
+    margin-bottom: 10px; 
+    transition: background-image 1s ease-in-out; /* Transición suave */
+}
+
+@keyframes animate3 { /* Keyframes específicos para la imagen 3 (Configuración para 4 imágenes) */
+    /* Muestra la primera imagen (25% del tiempo total: 0% a 24%) */
+    0% {
+        background-image: url(/images/tnvio1.jpeg);
+    }
+    24% {
+        background-image: url(/images/tnvio1.jpeg);
+    }
+    /* Transición a la segunda imagen (25% del tiempo total: 25% a 49%) */
+    25% {
+        background-image: url(/images/tnvio2.jpeg);
+    }
+    49% {
+        background-image: url(/images/tnvio2.jpeg);
+    }
+    /* Transición a la tercera imagen (25% del tiempo total: 50% a 74%) */
+    50% {
+        background-image: url(/images/tnvio3.jpeg);
+    }
+    74% {
+        background-image: url(/images/tnvio3.jpeg);
+    }
+    /* Transición a la cuarta imagen (25% del tiempo total: 75% a 100%) */
+    75% {
+        background-image: url(/images/tnvio4.jpeg); /* Imagen 4 asumiendo que existe */
+    }
+    100% {
+        background-image: url(/images/tnvio4.jpeg);
+    }
+}
+
+.exp-info-img4 {
+    width: 450px;
+    height: 250px;
+    background-size: 100% 100%;
+    box-shadow: 0 20px 20px 10px rgba(0, 0, 0, 0.2);
+    animation: animate4 15s linear infinite; /* Animación específica para la imagen 4 */
+    border-radius: 20px;
+    margin-bottom: 10px; 
+    transition: background-image 1s ease-in-out; /* Transición suave */
+}
+
+@keyframes animate4 { /* Keyframes específicos para la imagen 4 (Configuración para 5 imágenes) */
+    /* Cada paso es del 20%. La imagen se mantiene hasta el 19% antes del cambio. */
+    
+    /* 1. psiquesalud1.png (0% - 19%) */
+    0% {
+        background-image: url(/images/psiquesalud1.png);
+    }
+    19% {
+        background-image: url(/images/psiquesalud1.png);
+    }
+    /* 2. psiquesalud2.png (20% - 39%) */
+    20% {
+        background-image: url(/images/psiquesalud2.png);
+    }
+    39% {
+        background-image: url(/images/psiquesalud2.png);
+    }
+    /* 3. psiquesalud3.png (40% - 59%) */
+    40% {
+        background-image: url(/images/psiquesalud3.png);
+    }
+    59% {
+        background-image: url(/images/psiquesalud3.png);
+    }
+    /* 4. psiquesalud4.png (60% - 79%) */
+    60% {
+        background-image: url(/images/psiquesalud4.png);
+    }
+    79% {
+        background-image: url(/images/psiquesalud4.png);
+    }
+    /* 5. psiquesalud5.png (80% - 100%) */
+    80% {
+        background-image: url(/images/psiquesalud5.png);
+    }
+    100% {
+        background-image: url(/images/psiquesalud5.png);
+    }
+}

@@ -1,0 +1,309 @@
+/* Basic styling for the body */
+body {
+    margin: 0;
+    text-align: center;
+}
+.koulen-regular {
+  font-family: "Koulen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.portada {
+  mask-image: linear-gradient(black 80%, transparent);
+     mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    max-width: 100%;
+    height: auto;
+
+}
+.orange {
+  color: var(--webkit-text-color);
+}
+/* resto de las configuraciones... */
+/* ... (Estilos de title1, video-background, main-content, sidebar, etc., sin cambios) ... */
+
+#title1 {
+  margin-top: -50px;
+  padding-bottom: 200px;
+}
+
+#video-background {
+    position: fixed; /* Fija el video en la esquina superior izquierda */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Oculta cualquier parte del video que se salga de la pantalla */
+    z-index: -10; /* Lo envía al fondo, detrás de todo lo demás (splash-screen y main-content) */
+    background-color: #000; /* Color de fallback si el video no carga */
+}
+/* ... (Estilos de video-background y splash-screen sin cambios) ... */
+
+/* 2. MAIN CONTENT STYLES */
+#main-content {
+    padding-top: 50px;  
+    background: transparent;
+    color: white;
+    min-height: 100vh; 
+    width: 100%;
+    
+    /* *************************************************************** */
+    /* CAMBIO FORZADO PARA LA SEPARACIÓN DE TRES COLUMNAS */
+    /* *************************************************************** */
+    /* Forzamos el espacio a la izquierda (Sidebar) y a la derecha (Sidebar2) */
+    padding-left: 130px; 
+    padding-right: 150px; 
+
+    --webkit-text-color: #C72907;
+}
+
+/* Estilos para el div principal de la portada/imagen (contenido central) */
+#main-content > div:nth-child(2) {
+    max-width: 800px; 
+    margin: 0 auto; 
+    text-align: center;
+    padding: 0; 
+}
+/* Class to hide content */
+.hidden {
+    display: none !important;
+}
+
+/* --- Estilos de la Barra Lateral (Sidebar - IZQUIERDA) --- */
+
+/* La clase .page vuelve a ser un bloque normal */
+.page {
+  background: transparent;
+  color: transparent;
+  box-shadow: none;
+  display: block; 
+  min-height: auto; 
+}
+
+
+.sidebar {
+  --width-open: 360px;
+  --width-closed: 64px;
+  
+  overflow: hidden;
+  position: fixed; /* Posición fija para estar siempre a la izquierda */
+  left: 40px; 
+  top: 50%;
+  transform: translateY(-50%); 
+
+  /* Color de fondo G R I S OSCURO (como en la segunda imagen) */
+  background: #444444; 
+  color: white; /* Color de texto general, aunque los 'a' se harán invisibles */
+  width: var(--width-closed);
+  border-radius: 16px;
+  box-shadow: 
+    inset 0 0 5px rgba(0, 0, 0, 0.4), 
+    2px 2px 5px rgba(0, 0, 0, 0.6); 
+  transition: width 0.3s;
+  z-index: 100;
+}
+
+/* El contenedor del menú debe ser compacto */
+.menu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: fit-content; 
+  padding: 0; 
+  margin: 0;
+}
+
+/* ESTILOS POR DEFECTO DE CADA BOTÓN (Estado CERRADO - como la imagen 2) */
+.menu button {
+  display: flex;
+  gap: 16px; /* Espacio entre el icono y el texto (cuando visible) */
+  align-items: center;
+  height: 56px;
+  width: var(--width-closed); /* Ancho cerrado */
+  font-size: 16px;
+  /* Padding para centrar el icono en 64px de ancho: (64-20)/2 = 22px */
+  padding: 0 22px; 
+  cursor: pointer;
+  transition-property: background, width;
+  transition-duration: 0.3s;
+  /* IMPORTANTE: Fondo completamente transparente para que se vea el gris del .sidebar */
+  background: transparent; 
+  color: white; /* Color del texto (invisible por defecto) */
+  border: none; /* Asegura que no tenga bordes */
+}
+
+/* ESTILOS DE LOS ICONOS (siempre visibles y rojos en estado cerrado) */
+.menu button img {
+    width: 20px; 
+    height: 20px;
+    /* FILTRO para hacer los iconos ROJOS (ajusta si tus iconos son de otro color base) */
+    filter: invert(30%) sepia(90%) saturate(7000%) hue-rotate(350deg) brightness(100%);
+}
+
+/* ESTILOS DEL TEXTO DENTRO DEL BOTÓN (<a>) - OCULTO POR DEFECTO */
+.menu button a {
+    /* Por defecto, el texto está invisible y no ocupa espacio */
+    opacity: 0;
+    white-space: nowrap; 
+    overflow: hidden; 
+    transition: opacity 0.1s ease-in, transform 0.3s ease-out; /* Transición para que el texto aparezca */
+    color: white; /* El texto será blanco cuando aparezca */
+    text-decoration: none; 
+    /* Truco para que el texto "se deslice" desde la derecha */
+    transform: translateX(-20px); 
+}
+
+/* --- ESTADOS AL INTERACTUAR --- */
+
+/* CUANDO EL SIDEBAR SE DESPLIEGA (HOVER en .sidebar) */
+.sidebar:hover {
+  width: var(--width-open); /* Expande el ancho del sidebar */
+}
+
+/* Cuando el sidebar está desplegado, los botones también ajustan su ancho */
+.sidebar:hover .menu button {
+  width: var(--width-open);
+}
+
+/* Cuando el sidebar está desplegado, el TEXTO aparece */
+.sidebar:hover .menu button a {
+    opacity: 1; /* El texto se hace visible */
+    transform: translateX(0); /* El texto vuelve a su posición original */
+    transition-delay: 0.2s; /* Un pequeño retardo para que aparezca después del despliegue del ancho */
+}
+
+/* HOVER EN UN BOTÓN INDIVIDUAL (cuando el sidebar ya está desplegado) */
+.menu button:hover {
+  /* Fondo blanco semitransparente para el botón individual */
+  background: rgba(255, 255, 255, 0.15); 
+  opacity: 1; 
+}
+
+
+/* --- Estilos de la Barra Lateral (Sidebar2 - DERECHA) --- */
+
+.page2 {
+  background: transparent;
+  color: transparent;
+  box-shadow: none;
+  position: relative; 
+}
+
+.sidebar2 {
+  /* Posicionamiento Fijo a la derecha */
+  position: fixed; 
+  right: 50px; /* Coloca la sección a 40px del borde derecho. */
+  top: 270px; /* Ajusta la posición vertical para estar en la parte superior derecha. */
+
+  background: transparent; 
+  color: var(--webkit-text-color); 
+  width: auto; /* El ancho se ajusta al contenido */
+  transition: transform 0.3s;
+  z-index: 100;
+  cursor: pointer; /* Indica que es un elemento interactivo */
+  text-align: center; /* Centra el contenido (imagen y h3) */
+}
+
+.sidebar2:hover {
+  /* Efecto visual al pasar el cursor */
+  transform: scale(1.05);
+}
+
+.sidebar2 .descarga-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar2 img {
+    /* Estilos para que la imagen de currículum sea grande y roja */
+    width: 200px; /* Tamaño del icono grande */
+    height: 200px;
+    /* Aplica el filtro rojo para que coincida con el resto de la paleta */
+   
+}
+
+.sidebar2 h3 {
+    /* Estilos para el texto "DESCARGAR CURRICULUM" */
+    color: var(--webkit-text-color); /* Rojo definido al inicio de #main-content */
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    margin-top: 5px; /* Pequeña separación del icono */
+    white-space: nowrap; /* Asegura que el texto no se rompa */
+}
+
+/* boton de habilidades */
+
+#btnpro {
+  --m: 4rem; /* Define una variable para el tamaño base del botón (4rem). */
+  --red: #ff6565; /* Define la variable de color rojo. */
+  --pink: #FF64F9; /* Define la variable de color rosa. */
+  --blue: #4D8AFF; /* Define la variable de color azul. */
+  --green: #5bff8aff; /* Define la variable de color verde. */
+  --yellow: #ffee55; /* Define la variable de color amarillo. */
+  --orange: #ff6d1b; /* Define la variable de color naranja. */
+  --purple: #9933ff; /* **AÑADIDO**: Define un color morado que falta en tu gradiente. */
+  --dark-bg: #121213; /* **AÑADIDO**: Define un color de fondo oscuro para el interior del botón. */
+   /* **AÑADIDO**: Define el color del texto (blanco para que se vea en el fondo oscuro). */
+  
+  border: calc(0.08 * var(--m)) solid transparent; /* Crea un borde transparente de un tamaño relativo. */
+  position: relative; /* Establece el contexto para el pseudo-elemento ::before. */
+  font-size: 24px; /* Define el tamaño de la fuente. */
+  border-radius: calc(0.7 * var(--m)); /* Define el radio de las esquinas para el efecto redondeado. */
+  padding: calc(0.2 * var(--m)) calc(1 * var(--m)); /* Define el relleno interno. */
+  
+  /* ********** CLAVE: Creación del Borde Giratorio ********** */
+  background: 
+    linear-gradient(var(--dark-bg), var(--dark-bg)), /* 1. Primera capa: El color de fondo del botón (oscuro). */
+    linear-gradient(var(--dark-bg) 50%, #12121399 80%, #12121300), /* 2. Segunda capa: Un fondo sutil degradado que parece no tener efecto visible aquí. */
+    linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red)); /*s 3. Tercera capa: El gradiente de arcoíris para el borde. */
+  
+  color: var(--webkit-text-color); /* **MODIFICADO**: Cambia el color del texto a blanco. (Originalmente era #C72907). */
+  
+  background-origin: border-box; /* Aplica la primera y segunda capa al área de relleno y al borde. */
+  background-clip: padding-box, border-box, border-box; /* Recorta la primera capa (fondo oscuro) al área de relleno, y las otras dos capas al área del borde (creando el efecto de "borde"). */
+  background-size: 200%; /* Duplica el tamaño del fondo del gradiente (capa 3) para permitir la animación de rotación. */
+  cursor: pointer; /* Indica que el elemento es clickeable. */
+  animation: animate 2s infinite linear; /* Aplica la animación 'animate' que hace girar el gradiente. */
+}
+
+#btnpro a {
+  text-decoration: none;
+  color: var(--webkit-text-color);
+}
+
+#btnpro::before {
+  content: ''; /* Obligatorio para pseudo-elementos. */
+  background: linear-gradient(90deg,
+  var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red)); /* Duplica el gradiente de arcoíris. */
+  height: 30%; /* Define la altura del efecto de brillo inferior. */
+  width: 60%; /* Define el ancho del efecto de brillo inferior. */
+  position: absolute; /* Posiciona el elemento relativo al botón padre. */
+  bottom: -20%; /* Lo coloca justo debajo del botón. */
+  z-index: -5; /* Lo envía detrás del botón principal. */
+  background-size: 200%; /* Duplica el tamaño del fondo, listo para la animación. */
+  animation: animate 2s infinite linear; /* Aplica la misma animación de rotación. */
+  filter: blur(calc(0.8 * var(--m))); /* Aplica un desenfoque grande para crear el efecto de brillo/resplandor. */
+  border-radius: calc(0.7 * var(--m)); /* **AÑADIDO**: Asegura que el resplandor tenga bordes redondeados. */
+}
+/* **NOTA**: No tienes definida la variable --purple en el código original. La he añadido por completitud del gradiente. */
+
+#btnpro:hover,
+#btnpro:hover::before {
+  animation: animate 0.5s infinite linear; /* Acelera la animación de rotación al pasar el ratón. */
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0%; /* Al inicio de la animación, el fondo del gradiente se posiciona en 0. */
+  }
+
+  100% {
+    background-position: 200%; /* Al final, el fondo se desplaza al 200% de su tamaño, creando el efecto de "rotación". */
+  }
+}
+/* *** CORRECCIÓN: Se eliminó un '}' extra que estaba cerrando incorrectamente el bloque de @keyframes. ***/
